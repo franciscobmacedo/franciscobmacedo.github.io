@@ -15,7 +15,7 @@ const appURL = 'franciscomacedo.pt';
     const folderName = fs.existsSync("dist") ? "dist" : "build";
     await fs.writeFile(`${folderName}/CNAME`, appURL, function(err) {
       if (err === null){
-        console.log('website url defined CNAME: ', appURL)
+        console.log('website url defined CNAME:', appURL)
       }
       else{
         console.log(err)
@@ -30,7 +30,7 @@ const appURL = 'franciscomacedo.pt';
     await rimraf(folderName, function () { console.log("removed dist folder");});
     await execa("git", ["checkout", "-f", "master"]);
     await execa("git", ["branch", "-D", "gh-pages"]);
-    console.log("Successfully deployed, check your settings");
+    console.log("Successfully deployed");
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log(e.message);
