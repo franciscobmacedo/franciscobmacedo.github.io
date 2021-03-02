@@ -3,8 +3,10 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import router from './router'
 import store from './store'
-import VueYouTubeEmbed from 'vue-youtube-embed'
-Vue.use(VueYouTubeEmbed)
+// import VueYouTubeEmbed from 'vue-youtube-embed'
+import VueYoutube from 'vue-youtube'
+
+Vue.use(VueYoutube)
 
 Vue.config.productionTip = false
 
@@ -13,6 +15,7 @@ new Vue({
   router,
   store,
   render: h => h(App),
+  
   // created() {
   //   if (sessionStorage.redirect) {
   //     const redirect = sessionStorage.redirect

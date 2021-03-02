@@ -1,6 +1,13 @@
 <template>
     <v-card style="text-align: center" :flat="flat == undefined || flat == false  ? false : true">
-        <v-card-text>
+         <v-skeleton-loader
+          type="date-picker-options"
+          v-if="!loaded"
+        ></v-skeleton-loader>
+        <v-card-text
+          v-if="loaded"
+        
+        >
             <v-btn outlined icon class="ma-2" :color="color" @click.native="playing ? pause() : play()" :disabled="!loaded">
                 <v-icon v-if="!playing || paused">mdi-play</v-icon>
                 <v-icon v-else>mdi-pause</v-icon>
@@ -76,6 +83,7 @@ import { mapState } from 'vuex'
         }),
         data () {
             return {
+                t: true,
                 firstPlay: true,
                 isMuted: false,
                 loaded: false,

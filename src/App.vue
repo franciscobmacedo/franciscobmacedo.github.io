@@ -4,7 +4,7 @@
     
 
     <v-main>
-    <v-container class="ma-md-2 pa-10">
+    <v-container class="ma-md-2 pa-md-10">
       <router-view/>
     </v-container>  
     </v-main>
@@ -29,3 +29,8 @@ export default {
   }),
 };
 </script>
+<style>
+.hide{
+  display: none;
+}
+</style>

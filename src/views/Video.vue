@@ -6,7 +6,13 @@
     
       <v-col cols="12" lg="10">
         <div class="text-center">
-          <youtube player-width="100%" :player-height="height" video-id="13qSvuXNM-o"></youtube>
+             <v-skeleton-loader
+          type="image"
+          v-if="loadingVideo"
+        ></v-skeleton-loader>
+          <div  v-show="!loadingVideo">
+            <youtube  :fitParent="true" @ready="setVideoLoad" video-id="13qSvuXNM-o"></youtube>
+          </div>
         </div>
       </v-col>
       <v-col cols="12" lg="2">
@@ -20,6 +26,12 @@
 
 <script>
  export default {
+   data(){
+     return{
+       
+      loadingVideo: true
+     }
+   },
     computed: {
       height () {
         switch (this.$vuetify.breakpoint.name) {
@@ -32,6 +44,19 @@
         }
       },
     },
+    mounted: function () {
+
+    // `this` points to the vm instance
+      // this.videoHeight = this.height
+
+  },
+    methods:{
+       setVideoLoad(){
+      this.loadingVideo = false
+      
+
+      }
+    }
   }
 </script>
 

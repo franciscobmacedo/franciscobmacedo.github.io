@@ -1,12 +1,12 @@
 <template>
   <v-row>
-      <v-col cols="11">
+      <v-col cols="9" md="11">
         <div class="text-h4 text-uppercase">{{title}}</div>
         <div class="font-weight-thin">{{artist}} &bull; {{year}}</div>
 
     </v-col>
 
-      <v-col cols="1" class="text-right">
+      <v-col cols="3" md="1" class="text-right">
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
               <v-btn

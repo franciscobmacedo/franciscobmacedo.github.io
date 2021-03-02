@@ -3,12 +3,12 @@
     <v-skeleton-loader
       v-if="loading"
       :loading="loading"
-      transition="fade-transition"
-      type="card"
+      type="list-item,date-picker-options"
+      :elevation="1"
     >
     </v-skeleton-loader>
 
-    <v-card outlined tile class="text-center" v-show="!loading">
+    <v-card outlined tile class="text-center"  v-show="!loading">
       <div class="text-overline pl-3 pr-3" style="height: 60px">
         {{ music.name }}
       </div>
@@ -30,6 +30,7 @@ export default {
   },
   data() {
     return {
+      t: true,
       loading: true,
     };
   },
