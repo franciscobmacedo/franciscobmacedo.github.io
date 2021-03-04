@@ -1,23 +1,22 @@
 <template>
   <v-app>
     <Navigation />
-    
 
     <v-main>
-    <v-container class="ma-md-2 pa-md-10">
-      <router-view/>
-    </v-container>  
+      <v-container class="ma-lg-2 py-md-10 pr-lg-10">
+        <router-view />
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Navigation from './components/Navigation';
+import Navigation from "./components/Navigation";
 
 // import HelloWorld from './components/HelloWorld';
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     // HelloWorld,
@@ -26,11 +25,11 @@ export default {
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
 <style>
-.hide{
+.hide {
   display: none;
 }
 </style>
