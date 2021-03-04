@@ -8,7 +8,7 @@
     />
     <v-row>
       <v-col cols="12" sm="8">
-        <v-list>
+        <v-list class="background">
           <v-list-item-group v-model="musicPlayingID" color="primary">
             <v-list-item
               v-for="music in album.songs"

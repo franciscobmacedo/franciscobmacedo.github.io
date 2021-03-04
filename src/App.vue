@@ -29,6 +29,9 @@ export default {
 };
 </script>
 <style>
+#app {
+  background-color: #f4f4f4 !important;
+}
 .hide {
   display: none;
 }
