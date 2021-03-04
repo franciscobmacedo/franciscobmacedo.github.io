@@ -1,15 +1,11 @@
 <template>
   <div>
-photography stuff
+    photography stuff
   </div>
-  
 </template>
 
 <script>
-export default {
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>
