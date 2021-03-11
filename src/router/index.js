@@ -5,6 +5,7 @@ import Music from '../views/Music.vue'
 import Video from '../views/Video.vue'
 import Writing from '../views/Writing.vue'
 import Photograph from '../views/Photograph.vue'
+import Developer from '../views/Developer.vue'
 
 
 Vue.use(VueRouter)
@@ -34,6 +35,11 @@ const routes = [
     path: '/photograph',
     name: 'Photograph',
     component: Photograph
+  },
+  {
+    path: '/developer',
+    name: 'Developer',
+    component: Developer
   }
 ]
 
