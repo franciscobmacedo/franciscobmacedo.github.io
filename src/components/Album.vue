@@ -4,16 +4,17 @@
       :title="album.title"
       :artist="album.artist"
       :year="album.year"
-      :bandCampUrl="album.url"
+      :streamingUrls="album.streamingUrls"
     />
     <v-row>
-      <v-col cols="12" sm="8">
+      <v-col cols="12" sm="8" class="pa-0 pa-sm-3">
         <v-list class="background">
           <v-list-item-group v-model="musicPlayingID" color="primary">
             <v-list-item
               v-for="music in album.songs"
               :key="music.id"
               :value="music.id"
+              class="pl-0 pl-sm-4 pr-0 pr-sm-4"
             >
               <template>
                 <v-list-item-icon>
@@ -36,6 +37,7 @@
           <v-img
             v-show="!loadingImg"
             style="cursor: pointer"
+            max-width="300"
             :src="imgSrc"
             @click="goToExternalWebsite()"
           ></v-img>
@@ -61,33 +63,27 @@
           </li>
         </ul>
       </div>
-      <!-- <MusicCard
-          v-for="music of album.songs"
-        :key="music.id"
-        :music="music" /> -->
     </v-row>
   </div>
 </template>
 
 <script>
 import AlbumHeader from "@/components/AlbumHeader";
-// import MusicCard from "@/components/MusicCard"
 
 import { mapState } from "vuex";
 
 export default {
   props: {
-    album: Object
+    album: Object,
   },
   data() {
     return {
       imgSrc: "",
-      loadingImg: true
+      loadingImg: true,
     };
   },
   components: {
-    AlbumHeader
-    // MusicCard
+    AlbumHeader,
   },
   computed: {
     ...mapState(["pauseMusic"]),
@@ -102,13 +98,13 @@ export default {
         } else {
           this.$store.commit("setMusicID", id);
         }
-      }
-    }
+      },
+    },
   },
   methods: {
     goToExternalWebsite() {
       window.open(this.album.url, "_blank");
-    }
+    },
   },
   created() {
     var myImage = new Image();
@@ -117,7 +113,7 @@ export default {
       this.imgSrc = myImage.src;
       this.loadingImg = false;
     };
-  }
+  },
 };
 </script>
 

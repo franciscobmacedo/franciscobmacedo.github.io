@@ -2,6 +2,7 @@
   <v-card
     style="text-align: center"
     :flat="flat == undefined || flat == false ? false : true"
+    class="mb-10"
   >
     <div class="d-flex d-sm-none mt-0 pt-0">
       <v-progress-linear
@@ -129,7 +130,7 @@
   </v-card>
 </template>
 <script>
-const formatTime = second =>
+const formatTime = (second) =>
   new Date(second * 1000).toISOString().substr(14, 5);
 
 import { mapGetters, mapState } from "vuex";
@@ -139,39 +140,39 @@ export default {
   props: {
     flat: {
       type: Boolean,
-      default: false
+      default: false,
     },
     file: {
       type: String,
-      default: null
+      default: null,
     },
     autoPlay: {
       type: Boolean,
-      default: true
+      default: true,
     },
     ended: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     canPlay: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     color: {
       type: String,
-      default: null
+      default: null,
     },
     downloadable: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     duration: function() {
       return this.audio ? formatTime(this.totalDuration) : "";
     },
     ...mapGetters(["musicPlaying", "allSongs"]),
-    ...mapState(["pauseMusic"])
+    ...mapState(["pauseMusic"]),
   },
   watch: {
     musicPlaying() {
@@ -180,7 +181,7 @@ export default {
     },
     pauseMusic() {
       this.pause();
-    }
+    },
   },
   data() {
     return {
@@ -196,7 +197,7 @@ export default {
       paused: false,
       currentTime: "00:00:00",
       audio: undefined,
-      totalDuration: 0
+      totalDuration: 0,
     };
   },
 
@@ -208,6 +209,7 @@ export default {
       } else {
         this.$store.commit("setMusicID", this.musicPlaying.id + 1);
       }
+      this.playing = true;
     },
     prevSong() {
       const isFirstSong = this.musicPlaying.id === 0;
@@ -314,6 +316,7 @@ export default {
     },
     _handleEnded() {
       this.paused = this.playing = false;
+      this.nextSong();
     },
     init: function() {
       this.setImageSrc();
@@ -338,7 +341,7 @@ export default {
         this.imgSrc = myImage.src;
         this.loadingImg = false;
       };
-    }
+    },
   },
 
   mounted() {
@@ -347,7 +350,7 @@ export default {
   },
   beforeDestroy() {
     this.remove();
-  }
+  },
 };
 </script>
 <style scoped>

@@ -7,30 +7,35 @@
         <router-view />
       </v-container>
     </v-main>
+    <BottomNavigation v-if="$vuetify.breakpoint.mdAndDown" />
+    <MusicPlayerWraper />
   </v-app>
 </template>
 
 <script>
 import Navigation from "./components/Navigation";
-
-// import HelloWorld from './components/HelloWorld';
+import BottomNavigation from "./components/BottomNavigation";
+import MusicPlayerWraper from "@/components/MusicPlayerWraper";
 
 export default {
   name: "App",
 
   components: {
-    // HelloWorld,
-    Navigation
+    BottomNavigation,
+    Navigation,
+    MusicPlayerWraper,
   },
 
-  data: () => ({
-    //
-  })
+  data: () => ({}),
 };
 </script>
-<style>
+<style lang="scss">
+@import "~vuetify/src/styles/styles.sass";
 #app {
   background-color: #f4f4f4 !important;
+}
+a {
+  text-decoration: none;
 }
 .hide {
   display: none;
