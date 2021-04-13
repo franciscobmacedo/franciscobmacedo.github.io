@@ -1,11 +1,11 @@
 <template>
   <v-row>
-    <v-col cols="12" sm="8" md="9" xl="11" class="pa-1 pa-sm-3">
+    <v-col cols="12" sm="8" md="9" xl="10" class="pa-1 pa-sm-3">
       <div class="text-h4 text-uppercase">{{ title }}</div>
       <div class="font-weight-thin">{{ artist }} &bull; {{ year }}</div>
     </v-col>
 
-    <v-col cols="12" sm="4" md="3" xl="1" class="text-right">
+    <v-col cols="12" sm="4" md="3" xl="2" class="text-right">
       <v-row justify="center">
         <div
           class="mr-1 ml-1"
