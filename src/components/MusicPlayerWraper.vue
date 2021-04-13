@@ -7,7 +7,7 @@
         style="position: relative"
       >
         <v-btn
-          v-if="musicPlayingID != null"
+          v-if="showPlayer"
           fab
           small
           elevation="0"
@@ -22,7 +22,7 @@
         </v-btn>
 
         <div class="">
-          <MusicPlayer flat v-if="musicPlayingID != null" />
+          <MusicPlayer flat v-if="showPlayer" />
         </div>
       </v-sheet>
     </v-bottom-sheet>
