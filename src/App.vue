@@ -7,8 +7,9 @@
         <router-view />
       </v-container>
     </v-main>
-    <BottomNavigation v-if="$vuetify.breakpoint.mdAndDown" />
     <MusicPlayerWraper />
+
+    <BottomNavigation v-if="$vuetify.breakpoint.mdAndDown" />
   </v-app>
 </template>
 

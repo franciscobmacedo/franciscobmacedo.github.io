@@ -1,11 +1,6 @@
 <template>
-  <div class="text-center">
-    <v-bottom-sheet
-      :value="musicPlayingID != null"
-      persistent
-      hide-overlay
-      no-click-animation
-    >
+  <div>
+    <v-bottom-sheet :value="true" persistent hide-overlay no-click-animation>
       <v-sheet
         class="text-center"
         max-height="150px"
@@ -44,6 +39,9 @@ export default {
   },
   computed: {
     ...mapState(["musicPlayingID"]),
+    showPlayer() {
+      return this.musicPlayingID !== null;
+    },
   },
   methods: {
     closePlayer() {
