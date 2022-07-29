@@ -1,0 +1,25 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="20"
+    height="20"
+  >
+    <line
+      x1="2"
+      y1="2"
+      x2="20"
+      y2="20"
+      stroke="currentColor"
+      stroke-width="2"
+    />
+    <line
+      x1="20"
+      y1="2"
+      x2="2"
+      y2="20"
+      stroke="currentColor"
+      stroke-width="2"
+    />
+  </svg>
+</template>
