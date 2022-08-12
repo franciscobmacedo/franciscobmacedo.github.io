@@ -5,7 +5,7 @@
       @mouseenter="toggleTooltip"
       @mouseleave="toggleTooltip"
     >
-      <img :src="`src/assets/${image}`" class="object-cover w-6" />
+      <img :src="imgSrc" class="object-cover w-6" />
     </button>
     <div
       class="absolute w-full text-xs z-50"
@@ -50,5 +50,9 @@ const tooltipClass = computed(() => {
     default:
       return "top-[-25px] left-0";
   }
+});
+
+const imgSrc = computed(() => {
+  return new URL(`../assets/${props.image}`, import.meta.url);
 });
 </script>

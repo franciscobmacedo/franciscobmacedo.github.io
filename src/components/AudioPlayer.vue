@@ -51,9 +51,9 @@
 <script setup>
 import SimplexNoise from "simplex-noise";
 
-import spline from "@/spline.js";
-import PlayButton from "@/components/Icons/PlayButton.vue";
-import PauseButton from "@/components/Icons/PauseButton.vue";
+import spline from "../spline.js";
+import PlayButton from "../components/Icons/PlayButton.vue";
+import PauseButton from "../components/Icons/PauseButton.vue";
 import { onMounted, ref, computed, watch, onBeforeUnmount } from "vue";
 
 const props = defineProps({
@@ -96,7 +96,6 @@ const progress = ref(null);
 const currentTime = ref(0);
 
 const audioDuration = computed(() => {
-  console.log(audio.value);
   return audio.value != null ? audio.value.duration : 0;
 });
 
@@ -183,9 +182,13 @@ onMounted(() => {
 onBeforeUnmount(() => {
   stopAudio();
 });
+
+function getAudioURL(src) {
+  return new URL(`../assets/audio/${src}`, import.meta.url);
+}
 const setupAudio = () => {
-  //   let sound = await import(props.src);
-  audio.value = new Audio(props.src); // path to file
+  const audioSrc = getAudioURL(props.src);
+  audio.value = new Audio(audioSrc);
   audio.value.onloadedmetadata = () => {
     audioLoaded.value = true;
   };

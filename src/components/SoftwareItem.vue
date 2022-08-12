@@ -1,6 +1,7 @@
 <script setup>
-import { useLanguageStore } from "@/stores/language";
-import Badge from "@/components/Badge.vue";
+import { useLanguageStore } from "../stores/language";
+import Badge from "../components/Badge.vue";
+import { computed } from "vue";
 const language = useLanguageStore();
 
 const props = defineProps({
@@ -18,6 +19,14 @@ const props = defineProps({
     type: String,
     default: null,
   },
+});
+
+const imgSrc = computed(() => {
+  console.log(props.img);
+  if (props.img) {
+    return new URL(`../assets/${props.img}`, import.meta.url);
+  }
+  return null;
 });
 </script>
 <template>
@@ -64,7 +73,7 @@ const props = defineProps({
     </div>
     <div class="w-2/3 p-2 rounded" v-if="img !== null">
       <a :href="props.link" target="_blank">
-        <img :src="`src/assets/${img}`" />
+        <img :src="imgSrc" />
       </a>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <script setup>
-import SoftwareItem from "@/components/SoftwareItem.vue";
+import SoftwareItem from "../components/SoftwareItem.vue";
 const softwareItems = [
   {
     name: "Remote Freelancer",

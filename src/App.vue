@@ -50,10 +50,10 @@
 </template>
 <script setup>
 import { computed, ref } from "vue";
-import HamburgerButton from "@/components/icons/HamburgerButton.vue";
+import HamburgerButton from "./components/icons/HamburgerButton.vue";
 import CancelButton from "./components/Icons/CancelButton.vue";
 import LanguageSelector from "./components/LanguageSelector.vue";
-import { useLanguageStore } from "@/stores/language";
+import { useLanguageStore } from "./stores/language";
 const language = useLanguageStore();
 
 // import RainFall from "@/components/RainFall.vue";

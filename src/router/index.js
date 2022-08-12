@@ -1,32 +1,33 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import MusicView from "@/views/MusicView.vue";
-import PhotographyView from "@/views/PhotographyView.vue";
-import SoftwareView from "@/views/SoftwareView.vue";
-import AboutView from "@/views/AboutView.vue";
+// import MusicView from "../views/MusicView.vue";
+// import PhotographyView from "../views/PhotographyView.vue";
+// import SoftwareView from "../views/SoftwareView.vue";
+// import AboutView from "../views/AboutView.vue";
+// import OtherView from "../views/OtherView.vue";
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes: [
     {
       path: "/music",
       name: "music",
-      component: () => MusicView,
+      component: () => import("./../views/MusicView.vue"),
     },
     {
       path: "/photography",
       name: "photography",
-      component: () => PhotographyView,
+      component: () => import("./../views/PhotographyView.vue"),
     },
     {
       path: "/software",
       name: "software",
-      component: () => SoftwareView,
+      component: () => import("./../views/SoftwareView.vue"),
     },
     {
       path: "/",
       alias: "/about",
       name: "about",
-      component: () => AboutView,
+      component: () => import("./../views/AboutView.vue"),
     },
   ],
 });

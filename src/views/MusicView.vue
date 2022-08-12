@@ -1,8 +1,8 @@
 <script setup>
-import AudioPlayer from "@/components/AudioPlayer.vue";
+import AudioPlayer from "../components/AudioPlayer.vue";
 import { reactive, computed, ref } from "vue";
 
-import MusicAlbum from "@/components/MusicAlbum.vue";
+import MusicAlbum from "../components/MusicAlbum.vue";
 
 const WIGGLE_FACTOR = 10;
 
@@ -243,7 +243,7 @@ const calmanteAlbum = computed(() => {
         :speed="3"
         :wiggle="WIGGLE_FACTOR"
         :name="songPlaying.name"
-        :src="`src/assets/audio/${songPlaying.file}`"
+        :src="songPlaying.file"
         :pause="songPlaying.pause"
         :interiorRadius="70"
       />

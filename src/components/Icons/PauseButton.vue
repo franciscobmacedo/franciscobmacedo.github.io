@@ -7,9 +7,6 @@ const innerWidth = computed(() => window.innerWidth);
 const smallBreakpoint = computed(() =>
   parseInt(breakpoints.value.sm.split("px")[0])
 );
-
-console.log(innerWidth.value);
-console.log(smallBreakpoint);
 </script>
 <template>
   <svg
