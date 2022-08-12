@@ -236,7 +236,7 @@ const calmanteAlbum = computed(() => {
   <div class="sticky bottom-0 pb-2 left-32 overflow-y-auto w-full z-0">
     <div class="">
       <span
-        class="absolute bottom-0 w-full h-24 border-y-2 border-slate-200 md:h-40 bg-[#efefef] shadow-lg rounded-sm"
+        class="absolute bottom-0 w-full h-24 md:h-40 bg-[#fff] shadow-lg rounded-sm"
       ></span>
       <AudioPlayer
         v-if="songPlaying !== null"
