@@ -1,5 +1,6 @@
 <script setup>
 import { useLanguageStore } from "../stores/language";
+import ImageContainer from "../components/ImageContainer.vue";
 const language = useLanguageStore();
 const socialItems = [
   {
@@ -30,7 +31,9 @@ const socialItems = [
     </span>
   </div>
   <div class="flex justify-center align-middle">
-    <img src="/src/assets/FranciscoMacedo.jpg" class="md:w-1/3 md:h-1/3" />
+    <div class="md:w-1/3 md:h-1/3">
+      <ImageContainer img="FranciscoMacedo.jpg" />
+    </div>
   </div>
   <div class="flex justify-center">
     <div

@@ -1,28 +1,11 @@
 <script setup>
-import { computed } from "vue";
-
-const images = computed(() => {
-  return [
-    new URL("../assets/photos/10.jpg", import.meta.url),
-    new URL("../assets/photos/11.jpg", import.meta.url),
-    new URL("../assets/photos/12.jpg", import.meta.url),
-    new URL("../assets/photos/13.jpg", import.meta.url),
-    new URL("../assets/photos/14.jpg", import.meta.url),
-    new URL("../assets/photos/15.jpg", import.meta.url),
-    new URL("../assets/photos/16.jpg", import.meta.url),
-    new URL("../assets/photos/17.jpg", import.meta.url),
-    new URL("../assets/photos/18.jpg", import.meta.url),
-    new URL("../assets/photos/19.jpg", import.meta.url),
-    new URL("../assets/photos/2.jpg", import.meta.url),
-    new URL("../assets/photos/7.jpg", import.meta.url),
-    new URL("../assets/photos/8.jpg", import.meta.url),
-  ];
-});
+import ImageContainer from "../components/ImageContainer.vue";
+const images = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2, 7, 8];
 </script>
 <template>
   <div class="container grid grid-cols-3 gap-2 mx-auto">
     <div class="w-full rounded" v-for="image in images" :key="image">
-      <img :src="image" />
+      <ImageContainer :img="`photos/${image}.jpg`" />
     </div>
   </div>
 </template>

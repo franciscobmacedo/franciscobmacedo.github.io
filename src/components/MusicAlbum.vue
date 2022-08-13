@@ -37,7 +37,7 @@
       <div v-if="language.value === 'EN'">
         <slot name="descriptionEN" />
       </div>
-      <img :src="imgSrc" class="lg:w-3/5 lg:h-3/5" />
+      <ImageContainer :img="props.image" :class="'lg:w-3/5 lg:h-3/5'" />
     </div>
   </div>
 </template>
@@ -45,7 +45,7 @@
 <script setup>
 import { useLanguageStore } from "../stores/language";
 import ButtonWithTooltip from "../components/ButtonWithTooltip.vue";
-import { computed } from "vue";
+import ImageContainer from "./ImageContainer.vue";
 
 const props = defineProps({
   name: String,
@@ -59,8 +59,4 @@ const chooseSong = (id) => {
   emit("chooseSong", id);
 };
 const language = useLanguageStore();
-
-const imgSrc = computed(() => {
-  return new URL(`../assets/${props.image}`, import.meta.url);
-});
 </script>
