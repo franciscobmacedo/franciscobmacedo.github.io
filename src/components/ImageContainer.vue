@@ -27,6 +27,11 @@ const onImgLoad = () => {
   console.log("loaded");
   imageLoaded.value = true;
 };
+
+const imgClass = computed(() => {
+  // hide image if image is loading and add class if provided
+  return `${imageLoaded.value ? "" : "hidden"} ${props.class}`;
+});
 </script>
 <template>
   <div
@@ -34,5 +39,5 @@ const onImgLoad = () => {
     :class="[props.height === null ? 'min-h-[7em]' : `min-h-[${props.height}]`]"
     v-if="!imageLoaded"
   ></div>
-  <img :src="imgSrc" @load="onImgLoad" :class="props.class" />
+  <img :src="imgSrc" @load="onImgLoad" :class="imgClass" />
 </template>
